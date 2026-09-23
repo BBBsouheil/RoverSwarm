@@ -1,0 +1,25 @@
+{
+  "world": {
+    "width": 24,
+    "height": 24,
+    "num_agents": 3,
+    "obstacle_probability": 0.18,
+    "sensor_radius": 2,
+    "initial_energy": 160.0,
+    "max_steps": 180,
+    "target_coverage": 0.90,
+    "comm": {"enabled": false, "range": 7, "frequency": 3, "capacity": 12, "delay": 1, "loss_probability": 0.05}
+  },
+  "training": {
+    "total_timesteps_single": 20000,
+    "total_timesteps_shared": 60000,
+    "n_steps": 256,
+    "batch_size": 128,
+    "n_epochs": 5,
+    "learning_rate": 0.0003,
+    "max_seconds": 3600,
+    "seed": 23
+  },
+  "validation": {"seeds": [1501, 1502, 1503]},
+  "evaluation": {"seeds": [2001, 2002, 2003, 2004, 2005], "max_episodes": 5}
+}

@@ -1,0 +1,25 @@
+{
+  "protocol": {
+    "profile": "benchmark_v5",
+    "training_seeds": [71, 83, 97],
+    "transitions_per_seed": 301056,
+    "total_individual_transitions": 903168,
+    "validation_seeds": [2601, 2602, 2603, 2604, 2605, 2606, 2607, 2608, 2609, 2610],
+    "test_seeds": [3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130],
+    "selection_rule": "maximize validation success_rate, then coverage_mean, then minimize collisions_mean",
+    "selected_seed": 97,
+    "selected_model": "D:\\RoverSwarm\\artifacts\\models\\ppo_shared_benchmark_v5_seed97.zip",
+    "deployment_mode": "masked PPO stochastic"
+  },
+  "validation": {
+    "seed71": {"coverage_mean": 0.8608486244293534, "success_rate": 0.6, "collisions_mean": 7.9},
+    "seed83": {"coverage_mean": 0.8645162518616903, "success_rate": 0.4, "collisions_mean": 13.6},
+    "seed97": {"coverage_mean": 0.8630777138707482, "success_rate": 0.9, "collisions_mean": 30.5}
+  },
+  "final_test_30_unseen_maps": {
+    "random": {"coverage_mean": 0.5807836034346167, "coverage_std": 0.09917691653645716, "success_rate": 0.0, "collisions_mean": 95.56666666666666},
+    "frontier": {"coverage_mean": 0.8371029268048649, "coverage_std": 0.1303561731449757, "success_rate": 0.7, "collisions_mean": 115.63333333333334},
+    "ppo_masked_stochastic": {"coverage_mean": 0.8492553123614724, "coverage_std": 0.07407079834526166, "success_rate": 0.5, "collisions_mean": 16.4}
+  },
+  "conclusion": "PPO has the best mean coverage and far fewer collisions on the held-out test, but frontier retains the best strict 90% success rate."
+}

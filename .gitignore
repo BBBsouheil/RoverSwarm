@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+artifacts/models/*.zip
+artifacts/logs/*
+artifacts/results/*
+artifacts/test-temp*/
+!artifacts/models/.gitkeep
+!artifacts/logs/.gitkeep
+!artifacts/results/.gitkeep
+dist/
+build/
+*.egg-info/

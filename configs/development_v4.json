@@ -1,0 +1,42 @@
+{
+  "world": {
+    "width": 24,
+    "height": 24,
+    "num_agents": 3,
+    "obstacle_probability": 0.18,
+    "sensor_radius": 2,
+    "initial_energy": 180.0,
+    "move_cost": 1.0,
+    "wait_cost": 0.2,
+    "collision_extra_cost": 0.5,
+    "max_steps": 200,
+    "target_coverage": 0.90,
+    "observation_version": 2,
+    "novelty_reward": 0.15,
+    "individual_novelty_reward": 0.85,
+    "collision_penalty": 0.60,
+    "revisit_penalty": 0.02,
+    "wait_penalty": 0.12,
+    "time_penalty": 0.01,
+    "comm": {"enabled": false, "range": 7, "frequency": 3, "capacity": 12, "delay": 1, "loss_probability": 0.05}
+  },
+  "training": {
+    "algorithm": "maskable_ppo",
+    "total_timesteps_single": 100000,
+    "total_timesteps_shared": 300000,
+    "n_steps": 512,
+    "batch_size": 256,
+    "n_epochs": 5,
+    "learning_rate": 0.00025,
+    "gamma": 0.995,
+    "gae_lambda": 0.95,
+    "ent_coef": 0.003,
+    "clip_range": 0.2,
+    "extractor": "spatial_cnn",
+    "features_dim": 256,
+    "max_seconds": 900,
+    "seed": 61
+  },
+  "validation": {"seeds": [1601, 1602, 1603, 1604, 1605]},
+  "evaluation": {"seeds": [2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110], "max_episodes": 10}
+}

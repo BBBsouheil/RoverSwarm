@@ -1,0 +1,39 @@
+{
+  "protocol": {
+    "profile": "benchmark_v5",
+    "communication_training_seeds": [71, 83, 97],
+    "transitions_per_seed": 301056,
+    "selection_split": "validation seeds 2601-2610",
+    "selected_communication_seed": 71,
+    "test_split": "evaluation seeds 3101-3130",
+    "normal_channel": {"range": 7, "frequency": 3, "capacity": 12, "delay": 1, "loss_probability": 0.05},
+    "perturbed_channel": {"loss_probability_min": 0.5, "delay_min": 3}
+  },
+  "communication_model_validation": {
+    "seed71": {"coverage_mean": 0.8384545608928402, "success_rate": 0.3, "collisions_mean": 12.3},
+    "seed83": {"coverage_mean": 0.8218808552542232, "success_rate": 0.1, "collisions_mean": 11.6},
+    "seed97": {"coverage_mean": 0.7557560605019209, "success_rate": 0.1, "collisions_mean": 35.7}
+  },
+  "test_cross_ablation": {
+    "base_model_seed97": {
+      "channel_cut": {"coverage_mean": 0.8492553123614724, "success_rate": 0.5, "collisions_mean": 16.4},
+      "channel_normal": {"coverage_mean": 0.8562827651998983, "success_rate": 0.4666666666666667, "collisions_mean": 12.833333333333334},
+      "channel_perturbed": {"coverage_mean": 0.8407690314403541, "success_rate": 0.36666666666666664, "collisions_mean": 15.766666666666667}
+    },
+    "communication_trained_seed71": {
+      "channel_cut": {"coverage_mean": 0.8388096058925917, "success_rate": 0.43333333333333335, "collisions_mean": 19.666666666666668},
+      "channel_normal": {"coverage_mean": 0.8383052923384378, "success_rate": 0.36666666666666664, "collisions_mean": 16.766666666666666, "communication_bytes_mean": 5265.0},
+      "channel_perturbed": {"coverage_mean": 0.8326985185534802, "success_rate": 0.36666666666666664, "collisions_mean": 20.2, "communication_bytes_mean": 5538.0}
+    },
+    "frontier_reference": {
+      "channel_cut": {"coverage_mean": 0.8371029268048649, "success_rate": 0.7, "collisions_mean": 115.63333333333334},
+      "channel_normal": {"coverage_mean": 0.8961488069905711, "success_rate": 0.9, "collisions_mean": 60.1},
+      "channel_perturbed": {"coverage_mean": 0.8904695920373346, "success_rate": 0.9, "collisions_mean": 52.46666666666667}
+    }
+  },
+  "recommendation": {
+    "best_mean_coverage_configuration": "base PPO seed97 with normal communication channel",
+    "model": "D:\\RoverSwarm\\artifacts\\models\\ppo_shared_benchmark_v5_seed97.zip",
+    "interpretation": "Map exchange is useful, but direct communication training is not yet beneficial with the current observation representation. Keep the base PPO and enable normal map sharing for the demonstration."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "objective": "Distinguish locally sensed cells from radio-only cells in the PPO spatial observation.",
+  "architecture": {
+    "observation_version": 3,
+    "spatial_channels": 6,
+    "new_channel": "cumulative known cells received by radio but never locally sensed",
+    "map_leakage": false
+  },
+  "protocol": {
+    "validation_seeds": [3601, 3602, 3603, 3604, 3605, 3606, 3607, 3608, 3609, 3610],
+    "reserved_test_seeds": [4101, 4102, 4103, 4104, 4105, 4106, 4107, 4108, 4109, 4110, 4111, 4112, 4113, 4114, 4115, 4116, 4117, 4118, 4119, 4120, 4121, 4122, 4123, 4124, 4125, 4126, 4127, 4128, 4129, 4130],
+    "test_opened_for_v6": false,
+    "rejection_rule": "Do not open the reserved test when validation does not beat the V5 reference."
+  },
+  "validation": {
+    "v5_base_seed97_with_normal_channel": {
+      "coverage_mean": 0.8444940426479811,
+      "success_rate": 0.4,
+      "collisions_mean": 15.7
+    },
+    "v5_communication_seed71": {
+      "coverage_mean": 0.8168816897092823,
+      "success_rate": 0.3,
+      "collisions_mean": 6.6
+    },
+    "v6_from_scratch_seed71_301056_transitions": {
+      "coverage_mean": 0.7926486394905009,
+      "success_rate": 0.2,
+      "collisions_mean": 33.7
+    },
+    "v6_warm_started_from_v5_seed97_150528_transitions": {
+      "coverage_mean": 0.834467982113955,
+      "success_rate": 0.2,
+      "collisions_mean": 27.1,
+      "weights_copied": 35,
+      "convolutions_expanded": 3
+    }
+  },
+  "decision": "Reject V6 for deployment. Keep V5 base seed97 with optional normal map sharing.",
+  "lesson": "Explicit provenance helps warm-started V6 relative to training from scratch, but a raw binary provenance channel is not sufficient to improve the deployed policy."
+}

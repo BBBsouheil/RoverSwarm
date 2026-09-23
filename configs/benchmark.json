@@ -1,0 +1,29 @@
+{
+  "world": {
+    "width": 24,
+    "height": 24,
+    "num_agents": 3,
+    "obstacle_probability": 0.18,
+    "sensor_radius": 2,
+    "initial_energy": 160.0,
+    "max_steps": 220,
+    "target_coverage": 0.90,
+    "comm": {"enabled": false, "range": 7, "frequency": 3, "capacity": 12, "delay": 1, "loss_probability": 0.05}
+  },
+  "training": {
+    "total_timesteps_single": 300000,
+    "total_timesteps_shared": 900000,
+    "n_steps": 512,
+    "batch_size": 256,
+    "n_epochs": 8,
+    "learning_rate": 0.0003,
+    "max_seconds": 21600,
+    "seed": 31,
+    "training_seeds": [31, 47, 79]
+  },
+  "validation": {"seeds": [2501,2502,2503,2504,2505,2506,2507,2508,2509,2510]},
+  "evaluation": {
+    "seeds": [3001,3002,3003,3004,3005,3006,3007,3008,3009,3010,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021,3022,3023,3024,3025,3026,3027,3028,3029,3030],
+    "max_episodes": 30
+  }
+}
