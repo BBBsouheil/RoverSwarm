@@ -222,3 +222,7 @@ Sur dix nouvelles cartes de validation, le V6 entraîné depuis zéro atteint 79
 L’expérience ultérieure de communication émergente restera séparée : petit vocabulaire sans sémantique prédéfinie, comparaison à budget égal, suppression et permutation des messages. Elle ne sera pas appelée « langage » sans preuves expérimentales.
 
 Voir docs/ENVIRONNEMENT.md et docs/PROTOCOLE_EXPERIMENTAL.md pour les définitions exactes.
+
+## Licence
+
+RoverSwarm est distribué sous licence MIT. Voir [LICENSE](LICENSE).
